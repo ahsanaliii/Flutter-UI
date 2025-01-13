@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/screens/home_screen.dart';
 import 'package:quiz_app/screens/questions_summary.dart';
 
 class ResultScreen extends StatelessWidget {
@@ -28,6 +29,8 @@ class ResultScreen extends StatelessWidget {
     final numCorrectQuestions = summaryData.where((data) {
       return data["user_answer"] == data["correct_answer"];
     }).length;
+
+    void backScreen() {}
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -36,7 +39,9 @@ class ResultScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-                "You answered $numCorrectQuestions of $numTotalQuestions questions correctly😍!"),
+              "You answered $numCorrectQuestions of $numTotalQuestions questions correctly!",
+              style: const TextStyle(color: Colors.white, fontSize: 12),
+            ),
             const SizedBox(
               height: 30,
             ),
@@ -44,7 +49,23 @@ class ResultScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            TextButton(onPressed: () {}, child: const Text("Restart Quiz"))
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage(backScreen)),
+                );
+              },
+              style: TextButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 185, 23, 218)),
+              child: const Text(
+                "Restart Quiz",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.white,
+                ),
+              ),
+            )
           ],
         ),
       ),
