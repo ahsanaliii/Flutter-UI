@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class InstagramLikeButton extends StatefulWidget {
+  const InstagramLikeButton({super.key});
+
   @override
   _InstagramLikeButtonState createState() => _InstagramLikeButtonState();
 }

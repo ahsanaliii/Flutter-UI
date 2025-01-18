@@ -5,7 +5,7 @@ class HeartRippleInkWell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Heart Ripple Effect")),
+      appBar: AppBar(title: const Text("Heart Ripple Effect")),
       body: Center(
         child: ClipPath(
           clipper: HeartClipper(), // Custom Heart Clipper
@@ -20,7 +20,7 @@ class HeartRippleInkWell extends StatelessWidget {
                 width: 100,
                 height: 100,
                 color: Colors.pink, // Background color of the heart
-                child: Icon(
+                child: const Icon(
                   Icons.favorite,
                   color: Colors.white,
                   size: 50,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gesture/gesture.dart';
 import 'package:gesture/heartbeataffect.dart';
 
 void main() {
