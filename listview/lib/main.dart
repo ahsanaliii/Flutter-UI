@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:listview/counter.dart';
 import 'package:listview/gridview.dart';
-import 'package:listview/homepage.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
-  Counter({super.key});
+  const Counter({super.key});
   @override
   State<Counter> createState() => _CounterState();
 }
@@ -47,12 +47,12 @@ class _CounterState extends State<Counter> {
             // SizedBox(
             //   width: 20,
             // ),
-            Text("Count : ${counter}"),
+            Text("Count : $counter"),
             OutlinedButton(
               onPressed: decrement,
               child: const Text("decrement"),
             ),
-            OutlinedButton(onPressed: reset, child: Text("Reset"))
+            OutlinedButton(onPressed: reset, child: const Text("Reset"))
           ],
         ),
       ),

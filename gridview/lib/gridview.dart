@@ -22,7 +22,7 @@ class Gridview extends StatelessWidget {
         backgroundColor: Colors.grey,
       ),
       body: Container(
-        margin: EdgeInsets.all(11),
+        margin: const EdgeInsets.all(11),
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3, mainAxisSpacing: 11, crossAxisSpacing: 11),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Listview extends StatelessWidget {
-  Listview({super.key});
+  const Listview({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text("ListView AppBar"),
+        title: const Text("ListView AppBar"),
         backgroundColor: Colors.grey,
       ),
       body: ListView.builder(

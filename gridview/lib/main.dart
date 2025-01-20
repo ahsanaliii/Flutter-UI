@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gridview/gridview.dart';
-import 'package:gridview/homepage.dart';
 import 'package:gridview/listview.dart';
 
 void main() {
