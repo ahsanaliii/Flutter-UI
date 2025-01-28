@@ -12,23 +12,29 @@ class CategoryModels {
   });
 
   static List<CategoryModels> getCategories() {
-    List<CategoryModels> categories = [];
-    categories.add(CategoryModels(
+    List<CategoryModels> categories = [
+      CategoryModels(
         name: "Salad",
         iconPath: "assets/icons/plate.svg",
-        boxColor: Colors.red));
-    categories.add(CategoryModels(
+        boxColor: Colors.red,
+      ),
+      CategoryModels(
         name: "Cake",
         iconPath: "assets/icons/pancakes.svg",
-        boxColor: Colors.green));
-    categories.add(CategoryModels(
+        boxColor: Colors.green,
+      ),
+      CategoryModels(
         name: "Pie",
         iconPath: "assets/icons/pie.svg",
-        boxColor: Colors.yellow));
-    categories.add(CategoryModels(
+        boxColor: Colors.yellow,
+      ),
+      CategoryModels(
         name: "Smoothies",
         iconPath: "assets/icons/orange-snacks.svg",
-        boxColor: Colors.orange));
+        boxColor: Colors.orange,
+      ),
+    ];
+
     return categories;
   }
 }
