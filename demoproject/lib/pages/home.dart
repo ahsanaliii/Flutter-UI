@@ -63,94 +63,98 @@ class _HomeState extends State<Home> {
           const SizedBox(
             height: 15,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 20),
-                child: Text(
-                  'Popular',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600),
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: ListView.separated(
-                  itemCount: popularDiets.length,
-                  shrinkWrap: true,
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      height: 25,
-                    );
-                  },
-                  itemBuilder: (context, index) {
-                    return Container(
-                      // color: Colors.blue,
-                      height: 100,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(16),
-                          boxShadow: [
-                            BoxShadow(
-                                color: const Color.fromARGB(255, 145, 130, 130)
-                                    .withOpacity(0.7),
-                                blurRadius: 20,
-                                spreadRadius: 0,
-                                offset: const Offset(0, 10))
-                          ]),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          SvgPicture.asset(
-                            popularDiets[index].iconPath,
-                            width: 65,
-                            height: 65,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                popularDiets[index].name,
-                                style: const TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              Text(
-                                "${popularDiets[index].level} | ${popularDiets[index].duration} | ${popularDiets[index].calorie}",
-                                style: const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color.fromARGB(255, 121, 114, 114)),
-                              ),
-                            ],
-                          ),
-                          GestureDetector(
-                            onTap: () {},
-                            child: SvgPicture.asset(
-                              "assets/icons/button.svg",
-                              width: 30,
-                              height: 30,
-                            ),
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              )
-            ],
-          )
+          _populardiets()
         ],
       ),
     );
+  }
+
+  Column _populardiets() {
+    return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Text(
+                'Popular',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: ListView.separated(
+                itemCount: popularDiets.length,
+                shrinkWrap: true,
+                separatorBuilder: (context, index) {
+                  return const SizedBox(
+                    height: 25,
+                  );
+                },
+                itemBuilder: (context, index) {
+                  return Container(
+                    // color: Colors.blue,
+                    height: 100,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                              color: const Color.fromARGB(255, 145, 130, 130)
+                                  .withOpacity(0.7),
+                              blurRadius: 20,
+                              spreadRadius: 0,
+                              offset: const Offset(0, 10))
+                        ]),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SvgPicture.asset(
+                          popularDiets[index].iconPath,
+                          width: 65,
+                          height: 65,
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              popularDiets[index].name,
+                              style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            Text(
+                              "${popularDiets[index].level} | ${popularDiets[index].duration} | ${popularDiets[index].calorie}",
+                              style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromARGB(255, 121, 114, 114)),
+                            ),
+                          ],
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: SvgPicture.asset(
+                            "assets/icons/button.svg",
+                            width: 30,
+                            height: 30,
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ),
+            )
+          ],
+        );
   }
 
   Column _diets() {
