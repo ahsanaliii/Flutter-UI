@@ -10,23 +10,23 @@ class Textinput extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("AppBar"),
+          title: const Text("AppBar"),
           backgroundColor: Colors.grey,
         ),
         body: Center(
-          child: Container(
+          child: SizedBox(
             width: 300,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextField(
-                  keyboardType: TextInputType.numberWithOptions(),
+                  keyboardType: const TextInputType.numberWithOptions(),
                   controller: uName,
                   decoration: InputDecoration(
                     hintText: "enter name here..",
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(11),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.green,
                         )),
                     //   enabledBorder: OutlineInputBorder(
@@ -40,10 +40,10 @@ class Textinput extends StatelessWidget {
                     //   ),
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(11),
-                        borderSide: BorderSide(color: Colors.orange)),
+                        borderSide: const BorderSide(color: Colors.orange)),
                     suffixIcon: IconButton(
-                        onPressed: () {}, icon: Icon(Icons.remove_red_eye)),
-                    prefixIcon: Icon(Icons.email),
+                        onPressed: () {}, icon: const Icon(Icons.remove_red_eye)),
+                    prefixIcon: const Icon(Icons.email),
                   ),
                 ),
                 Container(
@@ -55,24 +55,24 @@ class Textinput extends StatelessWidget {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(11),
-                        borderSide: BorderSide(color: Colors.yellow, width: 2)),
+                        borderSide: const BorderSide(color: Colors.yellow, width: 2)),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(11),
-                      borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 99, 9, 84),
+                      borderSide: const BorderSide(
+                        color: Color.fromARGB(255, 99, 9, 84),
                       ),
                     ),
                     suffixIcon: IconButton(
-                        onPressed: () {}, icon: Icon(Icons.remove_red_eye)),
+                        onPressed: () {}, icon: const Icon(Icons.remove_red_eye)),
                   ),
                 ),
                 ElevatedButton(
                     onPressed: () {
                       var name = uName.text;
                       var pass = uPass.text;
-                      print("My name is ${name}  and password is ${pass}");
+                      print("My name is $name  and password is $pass");
                     },
-                    child: Text("Click me..."))
+                    child: const Text("Click me..."))
               ],
             ),
           ),

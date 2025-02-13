@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Checkboxwidget extends StatefulWidget {
-  Checkboxwidget({super.key});
+  const Checkboxwidget({super.key});
 
   @override
   State<Checkboxwidget> createState() => _CheckboxwidgetState();
@@ -15,7 +15,7 @@ class _CheckboxwidgetState extends State<Checkboxwidget> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text("AppBar"),
+        title: const Text("AppBar"),
       ),
       body: Center(
         child: Checkbox(

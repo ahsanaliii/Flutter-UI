@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class DividerExample extends StatelessWidget {
+  const DividerExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Divider Example")),
-      body: Row(
+      appBar: AppBar(title: const Text("Divider Example")),
+      body: const Row(
         children: [
           Expanded(
             child: Column(

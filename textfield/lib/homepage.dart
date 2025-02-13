@@ -10,11 +10,11 @@ class Homepage extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text("AppBar"),
+        title: const Text("AppBar"),
         backgroundColor: Colors.grey,
       ),
       body: Center(
-        child: Container(
+        child: SizedBox(
           width: 300,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -24,18 +24,18 @@ class Homepage extends StatelessWidget {
                 decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(11),
-                      borderSide: BorderSide(color: Colors.orange, width: 2),
+                      borderSide: const BorderSide(color: Colors.orange, width: 2),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(11),
-                      borderSide: BorderSide(
-                          color: const Color.fromARGB(255, 233, 0, 155),
+                      borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 233, 0, 155),
                           width: 2),
                     ),
                     suffixText: "",
                     suffixIcon: IconButton(
-                        onPressed: () {}, icon: Icon(Icons.remove_red_eye)),
-                    prefixIcon: Icon(Icons.email)),
+                        onPressed: () {}, icon: const Icon(Icons.remove_red_eye)),
+                    prefixIcon: const Icon(Icons.email)),
               ),
               Container(
                 height: 50,
@@ -46,15 +46,15 @@ class Homepage extends StatelessWidget {
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(11),
-                        borderSide: BorderSide(color: Colors.grey))),
+                        borderSide: const BorderSide(color: Colors.grey))),
               ),
               ElevatedButton(
                   onPressed: () {
                     String uEmail = emailTextController.text;
                     String uPass = passTextController.text;
-                    print('user email is ${uEmail} and password is ${uPass}');
+                    print('user email is $uEmail and password is $uPass');
                   },
-                  child: Text("Login"))
+                  child: const Text("Login"))
             ],
           ),
         ),

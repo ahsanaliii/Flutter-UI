@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Removes debug banner
       theme: ThemeData.light(), // Ensures date picker visibility
-      home: DateWidget(),
+      home: const DateWidget(),
     );
   }
 }

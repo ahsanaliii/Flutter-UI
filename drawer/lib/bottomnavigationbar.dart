@@ -51,7 +51,7 @@ class _BottomnavigationbarState extends State<Bottomnavigationbar> {
       body: Center(
         child: PageView(
           controller: pageController,
-          children: [HomePage(), Counter(), DateWidget(), GridviewWidget()],
+          children: const [HomePage(), Counter(), DateWidget(), GridviewWidget()],
         ),
         // child: widgets.elementAt(selectedIndex),
       ),

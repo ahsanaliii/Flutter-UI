@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Expendedwidget extends StatelessWidget {
-  Expendedwidget({super.key});
+  const Expendedwidget({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("AppBar here."),
+          title: const Text("AppBar here."),
           backgroundColor: Colors.grey,
         ),
         body: Container(
@@ -50,7 +50,7 @@ class Expendedwidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                Divider(
+                const Divider(
                   color: Colors.green,
                 ),
                 Column(

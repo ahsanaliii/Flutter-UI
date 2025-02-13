@@ -24,7 +24,7 @@ class _SliderWidgetState extends State<SliderWidget> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: Text("Slider Color Change")),
+        appBar: AppBar(title: const Text("Slider Color Change")),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

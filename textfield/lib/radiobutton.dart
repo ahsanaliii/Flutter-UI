@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RadiobuttonWidget extends StatefulWidget {
-  RadiobuttonWidget({super.key});
+  const RadiobuttonWidget({super.key});
 
   @override
   State<RadiobuttonWidget> createState() => _RadiobuttonWidgetState();
@@ -15,7 +15,7 @@ class _RadiobuttonWidgetState extends State<RadiobuttonWidget> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text("AppBar"),
+        title: const Text("AppBar"),
       ),
       body: Center(
         child: Column(

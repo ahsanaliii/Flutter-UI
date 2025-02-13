@@ -15,7 +15,7 @@ class _DateWidgetState extends State<DateWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Date Picker AppBar"),
+        title: const Text("Date Picker AppBar"),
       ),
       body: Container(
         child: Center(
@@ -25,7 +25,7 @@ class _DateWidgetState extends State<DateWidget> {
               Text(selectedDate == null
                   ? "No date selected"
                   : "Selected Date :  ${selectedDate!.toLocal()}"),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               ElevatedButton(
@@ -41,11 +41,11 @@ class _DateWidgetState extends State<DateWidget> {
                       });
                     }
                   },
-                  child: Text("Pick a Date")),
+                  child: const Text("Pick a Date")),
               Text(selectedTime == null
                   ? "no time selected"
                   : "Selected time is ${selectedTime!.hour} : ${selectedTime!.minute} "),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               ElevatedButton(
@@ -60,7 +60,7 @@ class _DateWidgetState extends State<DateWidget> {
                       });
                     }
                   },
-                  child: Text("Pick a Time"))
+                  child: const Text("Pick a Time"))
             ],
           ),
         ),

@@ -12,12 +12,12 @@ class Visacard extends StatelessWidget {
       body: Center(
           child: Container(
         // color: Colors.red,
-        margin: EdgeInsets.all(15),
+        margin: const EdgeInsets.all(15),
         height: 250,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(boxShadow: Appcolors.shadwos),
 
-        child: Content(),
+        child: const Content(),
       )),
     );
   }

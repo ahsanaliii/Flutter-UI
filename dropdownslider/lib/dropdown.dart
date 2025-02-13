@@ -16,7 +16,7 @@ class _DropdownwidgetState extends State<Dropdownwidget> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text("AppBar"),
+        title: const Text("AppBar"),
       ),
       body: Container(
         child: Center(

@@ -1,5 +1,4 @@
 import 'package:cardwidget/circularavatar.dart';
-import 'package:cardwidget/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {

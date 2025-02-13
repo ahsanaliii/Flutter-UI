@@ -13,7 +13,7 @@ class _StepperwidgetState extends State<Stepperwidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Stepper"),
+        title: const Text("Stepper"),
       ),
       body: Container(
         child: Center(
@@ -35,16 +35,16 @@ class _StepperwidgetState extends State<Stepperwidget> {
             },
             steps: [
               Step(
-                  title: Text("Step 1"),
-                  content: Text("This is step 1."),
+                  title: const Text("Step 1"),
+                  content: const Text("This is step 1."),
                   isActive: _currentstep >= 0),
               Step(
-                  title: Text("Step 2"),
-                  content: Text("This is step 2."),
+                  title: const Text("Step 2"),
+                  content: const Text("This is step 2."),
                   isActive: _currentstep >= 1),
               Step(
-                  title: Text("Step 3"),
-                  content: Text("This is step 3."),
+                  title: const Text("Step 3"),
+                  content: const Text("This is step 3."),
                   isActive: _currentstep >= 2),
                   
             ],

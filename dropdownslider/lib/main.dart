@@ -1,5 +1,3 @@
-import 'package:dropdownslider/dropdown.dart';
-import 'package:dropdownslider/dropdown2.dart';
 import 'package:dropdownslider/slider.dart';
 // import 'package:dropdownslider/home.dart';
 import 'package:flutter/material.dart';

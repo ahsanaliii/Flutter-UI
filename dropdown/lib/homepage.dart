@@ -25,12 +25,12 @@ class _HomepageState extends State<Homepage> {
                 Container(width: 200, height: 200, color: Colors.blue),
 
                 // Positioned widgets
-                Positioned(
+                const Positioned(
                   bottom: 10,
                   right: 10,
                   child: Text("Top Left", style: TextStyle(color: Colors.red)),
                 ),
-                Positioned(
+                const Positioned(
                   bottom: 10,
                   right: 10,
                   child: Text("Bottom Right",

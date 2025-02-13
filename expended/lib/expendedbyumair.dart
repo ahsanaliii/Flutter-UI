@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Expendedbyumair extends StatelessWidget {
-  Expendedbyumair({super.key});
+  const Expendedbyumair({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("AppBar"),
+        title: const Text("AppBar"),
         backgroundColor: Colors.grey,
       ),
       body: Container(
@@ -17,7 +17,7 @@ class Expendedbyumair extends StatelessWidget {
               height: 100,
               color: Colors.yellow,
             ),
-            VerticalDivider(
+            const VerticalDivider(
               color: Colors.blue,
               width: 30,
               thickness: 1,
