@@ -2,6 +2,7 @@ import 'package:calculator/screens/button.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -41,15 +42,18 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Calculator"),
         backgroundColor: Colors.grey,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      body: SizedBox(
+        width: 500,
+        height: 750,
+        // alignment: Alignment.center,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35),
               child: Container(
                 height: 30,
-                width: 150,
+                // width: 150,
                 alignment: Alignment.centerRight,
                 child: Text(
                   userInput == '' ? "0" : userInput,
@@ -66,7 +70,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 35),
               child: Container(
                 height: 30,
-                width: 250,
+                // width: 250,
                 alignment: Alignment.center,
                 child: Text(
                   answer,
@@ -76,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                 // color: Colors.red,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
