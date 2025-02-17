@@ -20,15 +20,15 @@ class ButtonWidget extends StatelessWidget {
     return InkWell(
       onTap: ontap,
       child: Container(
-        height: 60,
-        width: 60,
+        height: 40,
+        width: 40,
         decoration: BoxDecoration(
             color: buttonColor, borderRadius: BorderRadius.circular(50)),
         child: Center(
           child: Text(
             text,
             style: TextStyle(
-                color: styColor, fontSize: 34, fontWeight: FontWeight.bold),
+                color: styColor, fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
       ),
