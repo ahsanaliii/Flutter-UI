@@ -35,10 +35,6 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     Size mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Calculator 2.0"),
-        backgroundColor: Colors.grey,
-      ),
       body: Container(
         height: mediaQuery.height,
         width: mediaQuery.width,
@@ -49,7 +45,7 @@ class _HomepageState extends State<Homepage> {
 
           children: [
             SizedBox(
-              width: mediaQuery.width * 0.5,
+              width: mediaQuery.width * 0.7,
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Text(
@@ -61,7 +57,7 @@ class _HomepageState extends State<Homepage> {
             SizedBox(height: 40),
 
             SizedBox(
-              width: mediaQuery.width * 0.5,
+              width: mediaQuery.width * 0.7,
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Text(
@@ -74,10 +70,10 @@ class _HomepageState extends State<Homepage> {
             Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      width: mediaQuery.width * 0.15,
+                      width: mediaQuery.width * 0.01,
                       height: mediaQuery.height * 0.1,
                     ),
                     Buttonwidget(
@@ -87,7 +83,7 @@ class _HomepageState extends State<Homepage> {
                       onTap: () {
                         setState(() {
                           userinput = "";
-                          answer = "0";
+                          answer = "";
                         });
                       },
                     ),
@@ -105,6 +101,10 @@ class _HomepageState extends State<Homepage> {
                     ),
                     Buttonwidget(
                       text: "DEL",
+                      style: TextStyle(
+                        fontSize: mediaQuery.width * 0.03,
+                        fontWeight: FontWeight.bold,
+                      ),
                       textColor: Colors.blue,
                       backColor: const Color.fromARGB(255, 202, 195, 195),
                       onTap: () {
@@ -128,15 +128,15 @@ class _HomepageState extends State<Homepage> {
                         });
                       },
                     ),
-                    SizedBox(width: mediaQuery.width * 0.15),
+                    SizedBox(width: mediaQuery.width * 0.01),
                   ],
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                   children: [
                     SizedBox(
-                      width: mediaQuery.width * 0.15,
+                      width: mediaQuery.width * 0.01,
                       height: mediaQuery.height * 0.1,
                     ),
 
@@ -182,15 +182,15 @@ class _HomepageState extends State<Homepage> {
                         });
                       },
                     ),
-                    SizedBox(width: mediaQuery.width * 0.15),
+                    SizedBox(width: mediaQuery.width * 0.01),
                   ],
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                   children: [
                     SizedBox(
-                      width: mediaQuery.width * 0.15,
+                      width: mediaQuery.width * 0.01,
                       height: mediaQuery.height * 0.1,
                     ),
                     Buttonwidget(
@@ -235,15 +235,15 @@ class _HomepageState extends State<Homepage> {
                         });
                       },
                     ),
-                    SizedBox(width: mediaQuery.width * 0.15),
+                    SizedBox(width: mediaQuery.width * 0.01),
                   ],
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                   children: [
                     SizedBox(
-                      width: mediaQuery.width * 0.15,
+                      width: mediaQuery.width * 0.01,
                       height: mediaQuery.height * 0.1,
                     ),
                     Buttonwidget(
@@ -288,15 +288,15 @@ class _HomepageState extends State<Homepage> {
                         });
                       },
                     ),
-                    SizedBox(width: mediaQuery.width * 0.15),
+                    SizedBox(width: mediaQuery.width * 0.01),
                   ],
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                   children: [
                     SizedBox(
-                      width: mediaQuery.width * 0.15,
+                      width: mediaQuery.width * 0.01,
                       height: mediaQuery.height * 0.1,
                     ),
                     Buttonwidget(
@@ -337,7 +337,7 @@ class _HomepageState extends State<Homepage> {
                         });
                       },
                     ),
-                    SizedBox(width: mediaQuery.width * 0.15),
+                    SizedBox(width: mediaQuery.width * 0.01),
                   ],
                 ),
               ],
