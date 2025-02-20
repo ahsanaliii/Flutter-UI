@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginpage/bottomnavbar.dart';
+import 'package:loginpage/employeelist.dart';
 import 'package:loginpage/home.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Bottomnavbar(),
+      home: const Employeelist(),
       debugShowCheckedModeBanner: false,
     );
   }

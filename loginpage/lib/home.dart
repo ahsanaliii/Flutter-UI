@@ -252,9 +252,68 @@ class Home extends StatelessWidget {
             left: mediaQuery.width * 0.05,
             right: mediaQuery.width * 0.05,
             child: Container(
-              height: mediaQuery.height * 0.2,
+              clipBehavior: Clip.hardEdge,
+              height: mediaQuery.height * 0.18,
               width: mediaQuery.width * 0.8,
-              color: Colors.red,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.red,
+              ),
+              // child: Container(
+              //   height: mediaQuery.height * 0.18,
+              //   width: mediaQuery.width * 0.4,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.only(
+              //       topLeft: Radius.circular(20),
+              //       bottomLeft: Radius.circular(20),
+              //     ),
+              //     color: Colors.black,
+              //   ),
+              //   clipBehavior: Clip.hardEdge,
+              //   transform: Matrix4.rotationZ(-0.1),
+              // ),
+              child: Row(
+                children: [
+                  Container(
+                    height: mediaQuery.height * 0.18,
+                    width: mediaQuery.width * 0.4,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                      color: Colors.black.withOpacity(1),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                        // textAlign: TextAlign.center,
+                        "Vaccine Together Orphans",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    // transform: Matrix4.rotationZ(-0.1),
+                  ),
+                  Container(
+                    height: mediaQuery.height * 0.18,
+                    width: mediaQuery.width * 0.5,
+                    decoration: BoxDecoration(
+                      color: Colors.red.withOpacity(0.8),
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                        "Haha we are here are you ready for this  ??",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
