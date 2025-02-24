@@ -37,7 +37,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
       body: Center(
         child: PageView(
           // controller: PageController(),
-          children: [Home()],
+          children: [Home(), Login()],
         ),
       ),
     );

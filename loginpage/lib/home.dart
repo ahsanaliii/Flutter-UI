@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:loginpage/bottomnavbar.dart';
+import 'package:loginpage/employeelist.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int selectedIndex = 0;
+
+  void onTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     Size mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
+      // bottomNavigationBar:,
       body: Stack(
         children: [
           Container(
@@ -90,77 +105,89 @@ class Home extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  width: mediaQuery.width * 0.4,
-                                  decoration: BoxDecoration(
-                                    color: Colors.blue,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(10),
-                                    child: Column(
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => Home(),
-                                              ),
-                                            );
-                                          },
-                                          child: Container(
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Employeelist(),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: mediaQuery.width * 0.4,
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(10),
+                                      child: Column(
+                                        children: [
+                                          Container(
                                             alignment: Alignment.topRight,
                                             child: Icon(
                                               Icons.person,
                                               color: Colors.white,
                                             ),
                                           ),
-                                        ),
-                                        SizedBox(
-                                          height: mediaQuery.height * 0.07,
-                                        ),
-                                        Text(
-                                          maxLines: 2,
-                                          "Management Employees & Leave",
-
-                                          style: TextStyle(
-                                            fontSize: mediaQuery.width * 0.035,
-                                            color: Colors.white,
+                                          SizedBox(
+                                            height: mediaQuery.height * 0.07,
                                           ),
-                                        ),
-                                      ],
+                                          Text(
+                                            maxLines: 2,
+                                            "Management Employees & Leave",
+
+                                            style: TextStyle(
+                                              fontSize:
+                                                  mediaQuery.width * 0.035,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  width: mediaQuery.width * 0.4,
-                                  decoration: BoxDecoration(
-                                    color: Colors.orange,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          alignment: Alignment.topRight,
-                                          child: Icon(
-                                            Icons.person,
-                                            color: Colors.white,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Employeelist(),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: mediaQuery.width * 0.4,
+                                    decoration: BoxDecoration(
+                                      color: Colors.orange,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            alignment: Alignment.topRight,
+                                            child: Icon(
+                                              Icons.person,
+                                              color: Colors.white,
+                                            ),
                                           ),
-                                        ),
-                                        SizedBox(
-                                          height: mediaQuery.height * 0.07,
-                                        ),
-                                        Text(
-                                          "Claims & Salaries Employee",
-                                          style: TextStyle(
-                                            fontSize: mediaQuery.width * 0.035,
-                                            color: Colors.white,
+                                          SizedBox(
+                                            height: mediaQuery.height * 0.07,
                                           ),
-                                        ),
-                                      ],
+                                          Text(
+                                            "Claims & Salaries Employee",
+                                            style: TextStyle(
+                                              fontSize:
+                                                  mediaQuery.width * 0.035,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -170,69 +197,91 @@ class Home extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  width: mediaQuery.width * 0.4,
-                                  decoration: BoxDecoration(
-                                    color: Colors.red,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(
-                                      mediaQuery.width * 0.03,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Employeelist(),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: mediaQuery.width * 0.4,
+                                    decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(20),
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          alignment: Alignment.topRight,
-                                          child: Icon(
-                                            Icons.person,
-                                            color: Colors.white,
+                                    child: Padding(
+                                      padding: EdgeInsets.all(
+                                        mediaQuery.width * 0.03,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            alignment: Alignment.topRight,
+                                            child: Icon(
+                                              Icons.person,
+                                              color: Colors.white,
+                                            ),
                                           ),
-                                        ),
-                                        SizedBox(
-                                          height: mediaQuery.height * 0.07,
-                                        ),
-                                        Text(
-                                          "Program Training",
-                                          style: TextStyle(
-                                            fontSize: mediaQuery.width * 0.035,
-                                            color: Colors.white,
+                                          SizedBox(
+                                            height: mediaQuery.height * 0.07,
                                           ),
-                                        ),
-                                      ],
+                                          Text(
+                                            "Program Training",
+                                            style: TextStyle(
+                                              fontSize:
+                                                  mediaQuery.width * 0.035,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  width: mediaQuery.width * 0.4,
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(
-                                      mediaQuery.width * 0.03,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Employeelist(),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: mediaQuery.width * 0.4,
+                                    decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(20),
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          alignment: Alignment.topRight,
-                                          child: Icon(
-                                            Icons.person,
-                                            color: Colors.white,
+                                    child: Padding(
+                                      padding: EdgeInsets.all(
+                                        mediaQuery.width * 0.03,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            alignment: Alignment.topRight,
+                                            child: Icon(
+                                              Icons.person,
+                                              color: Colors.white,
+                                            ),
                                           ),
-                                        ),
-                                        SizedBox(
-                                          height: mediaQuery.height * 0.07,
-                                        ),
-                                        Text(
-                                          "System Recruitment",
-                                          style: TextStyle(
-                                            fontSize: mediaQuery.width * 0.035,
-                                            color: Colors.white,
+                                          SizedBox(
+                                            height: mediaQuery.height * 0.07,
                                           ),
-                                        ),
-                                      ],
+                                          Text(
+                                            "System Recruitment",
+                                            style: TextStyle(
+                                              fontSize:
+                                                  mediaQuery.width * 0.035,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -259,19 +308,7 @@ class Home extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.red,
               ),
-              // child: Container(
-              //   height: mediaQuery.height * 0.18,
-              //   width: mediaQuery.width * 0.4,
-              //   decoration: BoxDecoration(
-              //     borderRadius: BorderRadius.only(
-              //       topLeft: Radius.circular(20),
-              //       bottomLeft: Radius.circular(20),
-              //     ),
-              //     color: Colors.black,
-              //   ),
-              //   clipBehavior: Clip.hardEdge,
-              //   transform: Matrix4.rotationZ(-0.1),
-              // ),
+
               child: Row(
                 children: [
                   Container(
@@ -317,6 +354,19 @@ class Home extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: true,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.map), label: "Map"),
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Chat"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+        ],
+        onTap: onTapped,
+        currentIndex: selectedIndex,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey,
       ),
     );
   }

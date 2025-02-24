@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginpage/home.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -168,15 +169,23 @@ class Login extends StatelessWidget {
                     SizedBox(height: 20),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 18),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.blue,
-                        ),
-                        alignment: Alignment.center,
-                        height: mediaQuery.height * 0.08,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Home()),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.blue,
+                          ),
+                          alignment: Alignment.center,
+                          height: mediaQuery.height * 0.08,
 
-                        child: Text("Login"),
+                          child: Text("Login"),
+                        ),
                       ),
                     ),
                   ],
