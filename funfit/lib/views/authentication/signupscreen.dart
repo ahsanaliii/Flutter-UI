@@ -1,10 +1,11 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:funfit/views/authentication/signupsuccess.dart';
 import 'package:funfit/views/widgets/button.dart';
 import 'package:funfit/views/widgets/inputfield.dart';
 
 class Signupscreen extends StatefulWidget {
-  Signupscreen({super.key});
+  const Signupscreen({super.key});
 
   @override
   State<Signupscreen> createState() => _SignupscreenState();
@@ -22,32 +23,32 @@ class _SignupscreenState extends State<Signupscreen> {
           height: mediaQuery.height,
           width: mediaQuery.width,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(height: mediaQuery.height * 0.07),
+                  SizedBox(height: mediaQuery.height * 0.05),
                   Text(
                     "Create Your Account",
                     style: TextStyle(
-                      fontSize: mediaQuery.width * 0.06,
+                      fontSize: mediaQuery.width * 0.08,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: mediaQuery.height * 0.01),
+                  SizedBox(height: mediaQuery.height * 0.02),
                   SizedBox(
-                    height: mediaQuery.height * 0.1,
+                    height: mediaQuery.height * 0.08,
                     child: Inputfield(hinttext: "Full Name"),
                   ),
                   SizedBox(
-                    height: mediaQuery.height * 0.1,
+                    height: mediaQuery.height * 0.08,
                     child: Inputfield(
                       hinttext: "Phone Number",
                       // sufficon: Icon(Icons.arrow_drop_down),
                     ),
                   ),
                   SizedBox(
-                    height: mediaQuery.height * 0.1,
+                    height: mediaQuery.height * 0.08,
                     child: Inputfield(
                       hinttext: "Country",
                       sufficon: SizedBox(
@@ -68,11 +69,11 @@ class _SignupscreenState extends State<Signupscreen> {
                     ),
                   ),
                   SizedBox(
-                    height: mediaQuery.height * 0.1,
+                    height: mediaQuery.height * 0.08,
                     child: Inputfield(hinttext: "Email"),
                   ),
                   SizedBox(
-                    height: mediaQuery.height * 0.1,
+                    height: mediaQuery.height * 0.08,
                     child: Inputfield(
                       hinttext: "Password",
                       sufficon: Icon(
@@ -85,6 +86,7 @@ class _SignupscreenState extends State<Signupscreen> {
                     height: mediaQuery.height * 0.08,
                     // width: mediaQuery.width,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Checkbox(
                           value: value,
@@ -93,10 +95,7 @@ class _SignupscreenState extends State<Signupscreen> {
                           side: BorderSide(
                             color: const Color.fromARGB(255, 151, 148, 148),
                           ),
-                          // fillColor: ,
-                          // fillColor: ,
-                          // activeColor: Color.fromARGB(255, 233, 229, 229),
-                          // tristate: true,
+
                           onChanged: (newVlaue) {
                             setState(() {
                               value = newVlaue;
@@ -105,8 +104,9 @@ class _SignupscreenState extends State<Signupscreen> {
                         ),
                         SizedBox(
                           // height: mediaQuery.height * 0.3,
-                          width: mediaQuery.width * 0.8,
+                          width: mediaQuery.width * 0.7,
                           child: Text.rich(
+                            // textAlign: TextAlign.center,
                             TextSpan(
                               text: "Check it if you agree to our ",
                               style: TextStyle(
@@ -144,8 +144,63 @@ class _SignupscreenState extends State<Signupscreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: mediaQuery.height * 0.03),
-                  Buttonwidget(text: "Button"),
+                  SizedBox(height: mediaQuery.height * 0.01),
+                  Buttonwidget(
+                    text: "Sign Up",
+                    btnwidth: mediaQuery.width * 0.6,
+                    ontapped: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Signupsuccess(),
+                        ),
+                      );
+                    },
+                  ),
+                  SizedBox(height: mediaQuery.height * 0.02),
+
+                  Row(
+                    children: [
+                      Expanded(child: Divider()),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Text(
+                          "Or With",
+                          style: TextStyle(
+                            fontSize: mediaQuery.height * 0.02,
+                            color: Color.fromARGB(255, 133, 130, 130),
+                          ),
+                        ),
+                      ),
+                      Expanded(child: Divider()),
+                    ],
+                  ),
+                  SizedBox(height: mediaQuery.height * 0.01),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/images/google.png"),
+                      SizedBox(width: mediaQuery.width * 0.02),
+                      Image.asset("assets/images/facebook.png"),
+                      SizedBox(width: mediaQuery.width * 0.02),
+                      Image.asset("assets/images/apple.png"),
+                    ],
+                  ),
+                  SizedBox(height: mediaQuery.height * 0.02),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Already have an account?"),
+                      Text(
+                        " Log in",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff1732A4),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

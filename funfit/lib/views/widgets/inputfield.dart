@@ -12,7 +12,7 @@ class Inputfield extends StatelessWidget {
 
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+        padding: EdgeInsets.symmetric(vertical: 6),
         child: TextField(
           decoration: InputDecoration(
             // isDense: true,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:funfit/views/authentication/signupscreen.dart';
+import 'package:funfit/views/authentication/signupsuccess.dart';
 
 void main() {
   runApp(const MyApp());

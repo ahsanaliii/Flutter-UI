@@ -110,6 +110,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.0"
+  flutter_otp_text_field:
+    dependency: "direct main"
+    description:
+      name: flutter_otp_text_field
+      sha256: "17da5fad715194bee92923fe3c2cd252f7a4df131223a29183fe8640e6a16150"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.5.0+1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
