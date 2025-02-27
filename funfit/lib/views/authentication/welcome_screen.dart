@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:funfit/views/authentication/gender_screen.dart';
 import 'package:funfit/views/widgets/button.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -25,6 +26,12 @@ class WelcomeScreen extends StatelessWidget {
                 Buttonwidget(
                   text: "I'm Ready",
                   btnwidth: mediaQuery.width * 0.4,
+                  ontapped: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GenderScreen()),
+                    );
+                  },
                 ),
               ],
             ),
