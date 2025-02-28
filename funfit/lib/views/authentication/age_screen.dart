@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:funfit/views/authentication/gender_button.dart';
+import 'package:funfit/views/authentication/height_screen.dart';
 import 'package:funfit/views/widgets/button.dart';
 
 class AgeScreen extends StatefulWidget {
@@ -52,22 +53,49 @@ class _AgeScreenState extends State<AgeScreen> {
                   ),
                 ),
 
-                // SizedBox(height: mediaQuery.height * 0.03),
-                Container(
-                  width: mediaQuery.width * 0.6,
-                  height: 500,
-                  child: CupertinoDatePicker(
-                    onDateTimeChanged: (DateTime newDateTime) {
+                SizedBox(height: mediaQuery.height * 0.05),
+                SizedBox(
+                  width: mediaQuery.width * 0.4,
+                  height: mediaQuery.height * 0.4,
+                  child: CupertinoPicker(
+                    itemExtent: 32,
+                    onSelectedItemChanged: (value) {
                       setState(() {
-                        selectedYear = newDateTime.year;
+                        selectedYear = (selectedYear + value);
                       });
                     },
-                    mode: CupertinoDatePickerMode.monthYear,
-                    initialDateTime: DateTime(selectedYear),
-                    minimumYear: 1900,
-                    maximumYear: DateTime.now().year,
+                    useMagnifier: true,
+
+                    children: List.generate(51, (index) {
+                      return Center(
+                        child: Text(
+                          "${2020 + index}",
+                          style: TextStyle(
+                            color: Color(0xff1732A4),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      );
+                    }),
                   ),
                 ),
+
+                // SizedBox(height: mediaQuery.height * 0.03),
+                // Container(
+                //   width: mediaQuery.width * 0.6,
+                //   height: mediaQuery.height * 0.4,
+                //   child: CupertinoDatePicker(
+                //     onDateTimeChanged: (DateTime newDateTime) {
+                //       setState(() {
+                //         selectedYear = newDateTime.year;
+                //       });
+                //     },
+                //     mode: CupertinoDatePickerMode.monthYear,
+                //     initialDateTime: DateTime(selectedYear),
+                //     minimumYear: 1900,
+                //     maximumYear: DateTime.now().year,
+                //   ),
+                // ),
 
                 // Container(
                 //   width: 100,
@@ -83,8 +111,17 @@ class _AgeScreenState extends State<AgeScreen> {
                 //     },
                 //   ),
                 // ),
-                SizedBox(height: mediaQuery.height * 0.02),
-                Buttonwidget(text: "Next", btnwidth: mediaQuery.width * 0.4),
+                SizedBox(height: mediaQuery.height * 0.05),
+                Buttonwidget(
+                  text: "Next",
+                  btnwidth: mediaQuery.width * 0.4,
+                  ontapped: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HeightScreen()),
+                    );
+                  },
+                ),
               ],
             ),
           ),
