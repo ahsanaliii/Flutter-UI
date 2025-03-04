@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:funfit/views/authentication/gender_button.dart';
-import 'package:funfit/views/authentication/height_screen.dart';
+import 'package:funfit/views/screens/authentication/gender_button.dart';
+import 'package:funfit/views/screens/authentication/height_screen.dart';
 import 'package:funfit/views/widgets/button.dart';
 
 class AgeScreen extends StatefulWidget {

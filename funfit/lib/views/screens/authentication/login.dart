@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:funfit/views/authentication/forgetpassword.dart';
-import 'package:funfit/views/authentication/welcome_screen.dart';
+import 'package:funfit/views/screens/authentication/forgetpassword.dart';
+import 'package:funfit/views/screens/authentication/welcome_screen.dart';
 import 'package:funfit/views/widgets/button.dart';
 import 'package:funfit/views/widgets/inputfield.dart';
 

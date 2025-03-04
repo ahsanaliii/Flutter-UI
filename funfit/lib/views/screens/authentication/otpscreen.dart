@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:funfit/views/authentication/otpsuccess.dart';
+import 'package:funfit/views/screens/authentication/otpsuccess.dart';
 import 'package:funfit/views/widgets/button.dart';
 
 class Otpscreen extends StatelessWidget {

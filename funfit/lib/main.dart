@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:funfit/views/authentication/age_screen.dart';
-import 'package:funfit/views/authentication/signupscreen.dart';
-import 'package:funfit/views/authentication/signupsuccess.dart';
-import 'package:funfit/views/authentication/weight_screen.dart';
+import 'package:funfit/views/screens/authentication/age_screen.dart';
+import 'package:funfit/views/screens/authentication/gender_screen.dart';
+import 'package:funfit/views/screens/authentication/height_screen.dart';
+import 'package:funfit/views/screens/authentication/signupscreen.dart';
+import 'package:funfit/views/screens/authentication/signupsuccess.dart';
+import 'package:funfit/views/screens/authentication/weight_screen.dart';
 
 void main() {
   runApp(const MyApp());

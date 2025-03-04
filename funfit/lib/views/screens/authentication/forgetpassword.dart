@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:funfit/views/authentication/otpscreen.dart';
+import 'package:funfit/views/screens/authentication/otpscreen.dart';
 import 'package:funfit/views/widgets/button.dart';
 import 'package:funfit/views/widgets/inputfield.dart';
 

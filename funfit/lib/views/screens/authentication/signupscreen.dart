@@ -1,6 +1,6 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:funfit/views/authentication/signupsuccess.dart';
+import 'package:funfit/views/screens/authentication/signupsuccess.dart';
 import 'package:funfit/views/widgets/button.dart';
 import 'package:funfit/views/widgets/inputfield.dart';
 

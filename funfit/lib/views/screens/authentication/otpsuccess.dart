@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:funfit/views/authentication/login.dart';
+import 'package:funfit/views/screens/authentication/login.dart';
 import 'package:funfit/views/widgets/button.dart';
 
-class Signupsuccess extends StatelessWidget {
-  Signupsuccess({super.key});
+class Otpsuccess extends StatelessWidget {
+  Otpsuccess({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +17,9 @@ class Signupsuccess extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: 80,
-                width: 80,
-                decoration: BoxDecoration(
-                  color: Color(0xff1732A4),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: Icon(Icons.done, color: Colors.white, size: 40),
-              ),
-              // Image.asset("assets/images/CheckCircle.png"),
               SizedBox(height: mediaQuery.height * 0.02),
               Text(
-                "Registration Successful!",
+                "Successfully",
                 style: TextStyle(
                   fontSize: mediaQuery.height * 0.03,
                   fontWeight: FontWeight.bold,
@@ -38,19 +28,33 @@ class Signupsuccess extends StatelessWidget {
               SizedBox(height: mediaQuery.height * 0.02),
               Text(
                 textAlign: TextAlign.center,
-                "Your account is awaiting admin approvel. You will receive a notification once your profile is activated.",
+                "Your password has been updated, please change your password regularly to avoid this happening",
                 style: TextStyle(color: const Color.fromARGB(255, 85, 82, 82)),
               ),
-              SizedBox(height: mediaQuery.height * 0.02),
+              SizedBox(height: mediaQuery.height * 0.03),
               Buttonwidget(
                 text: "Continue",
-                btnwidth: mediaQuery.width * 0.6,
-                ontapped: () {
+
+                // ontapped: () {
+                //   Navigator.push(
+                //     context,
+                //     MaterialPageRoute(builder: (context) => Loginwidget()),
+                //   );
+                // },
+              ),
+              SizedBox(height: mediaQuery.height * 0.03),
+              GestureDetector(
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Loginwidget()),
                   );
                 },
+                child: Text(
+                  textAlign: TextAlign.center,
+                  "Back to Login",
+                  style: TextStyle(color: Color(0xff1732A4)),
+                ),
               ),
             ],
           ),

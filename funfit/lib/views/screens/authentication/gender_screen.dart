@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:funfit/views/authentication/age_screen.dart';
-import 'package:funfit/views/authentication/gender_button.dart';
+import 'package:funfit/views/screens/authentication/gender_button.dart';
+import 'package:funfit/views/screens/authentication/goal_screen.dart';
 import 'package:funfit/views/widgets/button.dart';
 
-class FitnessLevelScreen extends StatefulWidget {
-  const FitnessLevelScreen({super.key});
+class GenderScreen extends StatefulWidget {
+  const GenderScreen({super.key});
 
   @override
-  State<FitnessLevelScreen> createState() => _FitnessLevelScreenState();
+  State<GenderScreen> createState() => _GenderScreenState();
 }
 
-class _FitnessLevelScreenState extends State<FitnessLevelScreen> {
-  List<String> fitnessLevel = ["Begginer", "Intermediate", "Advanced"];
+class _GenderScreenState extends State<GenderScreen> {
+  List<String> genderNames = ["Male", "Female"];
   int selectedIndex = 0;
-  void toggleGender(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +45,7 @@ class _FitnessLevelScreenState extends State<FitnessLevelScreen> {
             child: Column(
               children: [
                 Text(
-                  "What's Your Fitness Level?",
+                  "What's Your Gender?",
                   style: TextStyle(
                     fontSize: mediaQuery.height * 0.03,
                     fontWeight: FontWeight.bold,
@@ -57,8 +54,8 @@ class _FitnessLevelScreenState extends State<FitnessLevelScreen> {
                 SizedBox(height: mediaQuery.height * 0.03),
 
                 GenderButton(
-                  text: fitnessLevel[0],
-                  isSelected: true,
+                  text: genderNames[0],
+                  isSelected: selectedIndex == 0,
                   ontapped: () {
                     setState(() {
                       selectedIndex = 0;
@@ -67,32 +64,22 @@ class _FitnessLevelScreenState extends State<FitnessLevelScreen> {
                 ),
                 SizedBox(height: mediaQuery.height * 0.03),
                 GenderButton(
-                  text: fitnessLevel[1],
-                  isSelected: false,
+                  text: genderNames[1],
+                  isSelected: selectedIndex == 1,
                   ontapped: () {
                     setState(() {
                       selectedIndex = 1;
                     });
                   },
                 ),
-                SizedBox(height: mediaQuery.height * 0.03),
-                GenderButton(
-                  text: fitnessLevel[2],
-                  isSelected: false,
-                  ontapped: () {
-                    setState(() {
-                      selectedIndex = 1;
-                    });
-                  },
-                ),
-                SizedBox(height: mediaQuery.height * 0.1),
+                SizedBox(height: mediaQuery.height * 0.22),
                 Buttonwidget(
                   text: "Next",
                   btnwidth: mediaQuery.width * 0.4,
                   ontapped: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AgeScreen()),
+                      MaterialPageRoute(builder: (context) => GoalScreen()),
                     );
                   },
                 ),
