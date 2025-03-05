@@ -4,8 +4,8 @@ class GenderButton extends StatelessWidget {
   final String? text;
   final VoidCallback? ontapped;
   final double? btnwidth;
-
   final bool isSelected;
+  
   const GenderButton({
     super.key,
     this.text,
