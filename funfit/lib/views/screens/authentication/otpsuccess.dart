@@ -3,7 +3,7 @@ import 'package:funfit/views/screens/authentication/login.dart';
 import 'package:funfit/views/widgets/button.dart';
 
 class Otpsuccess extends StatelessWidget {
-  Otpsuccess({super.key});
+  const Otpsuccess({super.key});
 
   @override
   Widget build(BuildContext context) {

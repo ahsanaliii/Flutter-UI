@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Inputfield extends StatelessWidget {
-  Widget? sufficon;
-  Color? sufficoncolor;
-  String? hinttext;
-  Inputfield({super.key, this.hinttext, this.sufficon});
+  final Widget? sufficon;
+  final Color? sufficoncolor;
+  final String? hinttext;
+  const Inputfield({super.key, this.hinttext, this.sufficon, this.sufficoncolor});
 
   @override
   Widget build(BuildContext context) {

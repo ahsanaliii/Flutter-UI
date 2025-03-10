@@ -3,7 +3,7 @@ import 'package:funfit/views/screens/authentication/login.dart';
 import 'package:funfit/views/widgets/button.dart';
 
 class Signupsuccess extends StatelessWidget {
-  Signupsuccess({super.key});
+  const Signupsuccess({super.key});
 
   @override
   Widget build(BuildContext context) {

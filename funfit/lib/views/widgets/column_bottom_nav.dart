@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ColumnBottomNav extends StatefulWidget {
-  IconData bottomNavIcon;
-  String bottomNavLabel;
-  VoidCallback? ontapped;
+  final IconData bottomNavIcon;
+  final String bottomNavLabel;
+  final VoidCallback? ontapped;
   final bool isSelected;
-  ColumnBottomNav({
+  const ColumnBottomNav({
     super.key,
     required this.bottomNavIcon,
     required this.bottomNavLabel,

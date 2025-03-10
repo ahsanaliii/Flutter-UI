@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WeightInputfield extends StatelessWidget {
-  int? maxlength;
-  WeightInputfield({super.key, this.maxlength});
+  final int? maxlength;
+  const WeightInputfield({super.key, this.maxlength});
 
   @override
   Widget build(BuildContext context) {
