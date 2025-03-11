@@ -31,6 +31,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
     Size mediaQuery = MediaQuery.of(context).size;
     // bool isSelected = true;
     return Scaffold(
+      body: Stack(children: [pages[selectedIndex]]),
       bottomNavigationBar: Stack(
         children: [
           Column(
@@ -112,8 +113,8 @@ class _BottomnavbarState extends State<Bottomnavbar> {
             ],
           ),
           Positioned(
-            top: 470,
-            left: 120,
+            top: 475,
+            left: 128,
 
             child: Container(
               height: 60,
