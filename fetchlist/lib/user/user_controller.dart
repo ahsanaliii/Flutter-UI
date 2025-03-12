@@ -3,17 +3,24 @@ import 'package:fetchlist/service/api_service.dart';
 import 'package:get/get.dart';
 
 class UserController extends GetxController {
-  var userlist = <UserModel>[].obs;
+  Rx<UserModel> userlist =
+      UserModel(limit: 0, skip: 0, total: 0, posts: []).obs;
   var isLoading = true.obs;
+  @override
+  Future<void> onInit() async {
+    super.onInit();
+    fetctUsers();
+  }
 
   fetctUsers() async {
     try {
-      // isLoading(true);
+      isLoading(true);
       var userData = await ApiService().fetchUserData();
-      userlist.addAll(userData);
+      userlist.value = userData;
       // print(userData);
+      isLoading(false);
     } catch (e) {
-      print("error fetching user data");
+      print("error fetching user data ${e}");
     } finally {
       isLoading(false);
     }

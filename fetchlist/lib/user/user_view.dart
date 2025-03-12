@@ -9,27 +9,46 @@ class UserView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size mediaQuery = MediaQuery.of(context).size;
+    // userController.fetctUsers();
     return Scaffold(
-      body: Obx(() {
-        // if (userController.isLoading.value) {
-        //   // return const Center(child: CircularProgressIndicator());
-        // }
-        return ListView.builder(
-          itemCount: userController.userlist.length,
-          itemBuilder: (context, index) {
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Container(
-                color: Colors.red,
-                child: ListTile(
-                  title: Text(userController.userlist[index].name),
-                  leading: Text(userController.userlist[index].email),
+      appBar: AppBar(
+        backgroundColor: Colors.grey,
+        title: Text("Fetching Data "),
+      ),
+      body: SafeArea(
+        child: Obx(() {
+          if (userController.isLoading.value) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          return ListView.builder(
+            itemCount: userController.userlist.value.posts.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                  color: Colors.blue,
+                  child: ListTile(
+                    title: Text(
+                      userController.userlist.value.posts[index].title,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    subtitle: Text(
+                      userController.userlist.value.posts[index].body,
+                      style: TextStyle(
+                        color: const Color.fromARGB(255, 228, 222, 222),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            );
-          },
-        );
-      }),
+              );
+            },
+          );
+        }),
+      ),
     );
   }
 }
