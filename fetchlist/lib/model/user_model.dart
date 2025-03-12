@@ -75,6 +75,8 @@ class Post {
         "views": views,
         "userId": userId,
     };
+
+  toLowerCase() {}
 }
 
 class Reactions {
