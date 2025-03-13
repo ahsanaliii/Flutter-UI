@@ -80,8 +80,7 @@ class _UserViewState extends State<UserView> {
                             ),
                           ),
                           subtitle: Text(
-                            userController.SearchItems.value.posts[index].body
-                                .substring(0, 100),
+                            userController.SearchItems.value.posts[index].body,
                             style: TextStyle(
                               color: const Color.fromARGB(255, 228, 222, 222),
                             ),
