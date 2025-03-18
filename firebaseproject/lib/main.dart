@@ -1,12 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebaseproject/firebase_options.dart';
+import 'package:firebaseproject/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:testingfirebase/firebase_options.dart';
-import 'package:testingfirebase/homepage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(const MyApp());
 }
@@ -18,11 +17,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        brightness: Brightness.light,
+        primaryColor: Colors.blue,
+
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Homepage(),
+      home: const HomePage(),
     );
   }
 }
