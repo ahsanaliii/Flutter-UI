@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "364787536349",
+    "project_id": "upload-image-5b750",
+    "storage_bucket": "upload-image-5b750.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364787536349:android:e85085446a80ace1906634",
+        "android_client_info": {
+          "package_name": "com.example.uploadimagefirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDErdnGcaxX8YkoAaFWRhPTY3XI_D8wq14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

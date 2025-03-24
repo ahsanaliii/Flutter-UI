@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
         .doc(studentName);
 
     Map<String, dynamic> students = {
-      "studentName": studentName,   
+      "studentName": studentName,
       "studentId": studentId,
       "studentProgramId": studentProgramId,
       "studentGpa": studentGpa,

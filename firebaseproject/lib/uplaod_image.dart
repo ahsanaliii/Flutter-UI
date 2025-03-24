@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebaseproject/button.dart';
 import 'package:flutter/material.dart';
@@ -15,33 +13,51 @@ class UplaodImage extends StatefulWidget {
 
 class _UplaodImageState extends State<UplaodImage> {
   File? _image;
-  String? _base64Image;
+  String? imagePath;
+  String? fetchedImagePath;
   final picker = ImagePicker();
   Future getGalleryImage() async {
     final pickedFile = await picker.pickImage(
       source: ImageSource.gallery,
       imageQuality: 80,
     );
-    List<int> imageBytes = await pickedFile!.readAsBytes();
-    String base64String = base64Encode(imageBytes);
+
     setState(() {
+      print("${pickedFile!.path}  path pickedd...");
       if (pickedFile != null) {
         _image = File(pickedFile.path);
-        _base64Image = base64String;
+        imagePath = pickedFile.path;
       } else {
-        // print("No image Picked");
+        print("No image Picked");
       }
     });
   }
 
-  Future<void> _uploadImage() async {
-    if (_base64Image != null) {
-      await FirebaseFirestore.instance
-          .collection("MyStudents")
-          .doc("ahsan")
-          .update({"image": _base64Image});
-    }
-    return null;
+  _uploadImage() async {
+    DocumentReference documentReference =
+        await FirebaseFirestore.instance.collection("UploadImages").doc();
+
+    Map<String, dynamic> students = {"imagePath": imagePath};
+
+    await documentReference.set(students);
+
+    // setState(() {});
+  }
+
+  _fetchImage() async {
+    FirebaseFirestore.instance.collection("UploadImages").get().then((
+      QuerySnapshot querySnapshot,
+    ) {
+      if (querySnapshot.docs.isNotEmpty) {
+        var imageData = querySnapshot.docs.first.data() as Map<String, dynamic>;
+        setState(() {
+          fetchedImagePath = imageData["imagePath"];
+        });
+        print("fetched Image $fetchedImagePath");
+      } else {
+        print("no image found in firebase");
+      }
+    });
   }
 
   @override
@@ -53,7 +69,6 @@ class _UplaodImageState extends State<UplaodImage> {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
             child: GestureDetector(
@@ -75,6 +90,30 @@ class _UplaodImageState extends State<UplaodImage> {
           Button(
             onPressed: _uploadImage,
             text: "Upload Image",
+            btnColor: Colors.blueAccent,
+          ),
+
+          SizedBox(height: 30),
+          Center(
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+              ),
+              height: 200,
+              width: 200,
+              child:
+                  fetchedImagePath != null 
+                      ? Image.file(File(fetchedImagePath!))
+                      : Text(
+                        textAlign: TextAlign.center,
+                        "select image from firebase",
+                      ),
+            ),
+          ),
+          SizedBox(height: 30),
+          Button(
+            onPressed: _fetchImage,
+            text: "Get Image from Firebase",
             btnColor: Colors.blueAccent,
           ),
         ],
