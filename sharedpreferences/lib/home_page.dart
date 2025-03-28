@@ -80,65 +80,68 @@ class _HomePageState extends State<HomePage> {
     loadItems();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                addNewItem();
-              },
-              child: Text("Add Item"),
-            ),
-            SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                clearAllItems();
-              },
-              child: Text("Clear All Items"),
-            ),
-            SizedBox(height: 30),
-            Expanded(
-              child: ListView.builder(
-                itemCount: items.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      // dense: true,
-                      // selectedColor: Colors.teal,
-                      tileColor: const Color.fromARGB(255, 169, 194, 191),
-                      // hoverColor: Colors.amberAccent,
-                      // horizontalTitleGap: 10,
-                      // contentPadding: EdgeInsets.symmetric(vertical: 10),
-                      // minTileHeight: 10,
-                      // style: ,
-                      title: Text(items[index]),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              editItem(index);
-                            },
-                            icon: Icon(Icons.edit),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              deleteItem(items[index]);
-                            },
-                            icon: Icon(Icons.delete),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          child: Column(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  addNewItem();
                 },
+                child: Text("Add Item"),
               ),
-            ),
-          ],
+              SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {
+                  clearAllItems();
+                },
+                child: Text("Clear All Items"),
+              ),
+              SizedBox(height: 30),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ListTile(
+                        // dense: true,
+                        // selectedColor: Colors.teal,
+                        tileColor: const Color.fromARGB(255, 169, 194, 191),
+                        // hoverColor: Colors.amberAccent,
+                        // horizontalTitleGap: 10,
+                        // contentPadding: EdgeInsets.symmetric(vertical: 10),
+                        // minTileHeight: 10,
+                        // style: ,
+                        title: Text(items[index]),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                editItem(index);
+                              },
+                              icon: Icon(Icons.edit),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                deleteItem(items[index]);
+                              },
+                              icon: Icon(Icons.delete),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
