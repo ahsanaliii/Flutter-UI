@@ -4,7 +4,12 @@ class Inputfield extends StatelessWidget {
   final Widget? sufficon;
   final Color? sufficoncolor;
   final String? hinttext;
-  const Inputfield({super.key, this.hinttext, this.sufficon, this.sufficoncolor});
+  const Inputfield({
+    super.key,
+    this.hinttext,
+    this.sufficon,
+    this.sufficoncolor,
+  });
 
   @override
   Widget build(BuildContext context) {

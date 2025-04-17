@@ -1,17 +1,3 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        // Ensure the correct version of the Android Gradle Plugin
-        classpath("com.android.tools.build:gradle:7.0.2")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")  // Kotlin plugin version
-        classpath("com.google.gms:google-services:4.3.15")  // For Firebase and Google services (if needed)
-    }
-}
-
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -20,14 +6,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.taskmanager"  // Set the main application namespace here
+    namespace = "com.example.taskmanager"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "27.0.12077973"  // Correct NDK version
+    ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-        isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
@@ -35,9 +20,11 @@ android {
     }
 
     defaultConfig {
-        // Specify your unique Application ID
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.taskmanager"
-        minSdk = flutter.minSdkVersion
+        // You can update the following values to match your application needs.
+        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        minSdk = 23  
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -45,6 +32,8 @@ android {
 
     buildTypes {
         release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
         }
     }
@@ -52,8 +41,4 @@ android {
 
 flutter {
     source = "../.."
-}
-
-dependencies {
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }
