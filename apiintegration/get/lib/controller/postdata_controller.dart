@@ -18,11 +18,7 @@ class PostdataController extends GetxController {
     );
     if (response.statusCode == 201) {
       postData.value = PostModel.fromJson(jsonDecode(response.body));
-      // Get.snackbar(
-      //   "Success",
-      //   "Post created with ID: ${postData.value?.id ?? "N/A"}",
-      //   snackPosition: SnackPosition.BOTTOM,
-      // );
+
       print("User Id: ${postData.value?.id}");
       print("User title: ${postData.value?.title}");
       print("User Body: ${postData.value?.body}");
@@ -30,11 +26,6 @@ class PostdataController extends GetxController {
       print("Data submitted successfully");
     } else {
       print("Not worked error while submitting the data");
-      // Get.snackbar(
-      //   "Error",
-      //   "Failed to create post.",
-      //   snackPosition: SnackPosition.BOTTOM,
-      // );
     }
     isPosting.value = false;
   }
