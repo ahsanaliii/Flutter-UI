@@ -21,7 +21,7 @@ class PostdataController extends GetxController {
         body: jsonEncode({
           "full_name": "talha gulzar iub",
           "phone_number": "03232312332",
-          "email": "talhanazir78frfr677@gmail.com",
+          "email": "talhanazir78fr876fr677@gmail.com",
           "password": "Password123@",
           "city": "13",
         }),

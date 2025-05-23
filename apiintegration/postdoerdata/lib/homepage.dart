@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart';
+import 'package:postdoerdata/patch_data_controller.dart';
 import 'package:postdoerdata/postdata_controller.dart';
+import 'package:postdoerdata/put_data_controller.dart';
 
 class Homepage extends StatelessWidget {
   Homepage({super.key});
 
   final PostdataController postdataController = Get.put(PostdataController());
+  final PutDataController putDataController = Get.put(PutDataController());
+  final PatchDataController patchDataController = Get.put(
+    PatchDataController(),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +25,13 @@ class Homepage extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  postdataController.postdata();
+                  patchDataController.patchData();
+                  // putDataController.putData();
+                  // postdataController.postdata();
                 },
-                child: Text("Submit Data"),
+                // child: Text("Submit Data"),
+                // child: Text("Put Data"),
+                child: Text("Patch Data"),
               ),
             ],
           );
