@@ -3,8 +3,14 @@ import 'package:get/get.dart';
 import 'package:postvide/post_video_controller.dart';
 import 'package:video_player/video_player.dart';
 
-class PostVideoPage extends StatelessWidget {
-  PostVideoPage({super.key});
+class PostVideoPage extends StatefulWidget {
+  const PostVideoPage({super.key});
+
+  @override
+  State<PostVideoPage> createState() => _PostVideoPageState();
+}
+
+class _PostVideoPageState extends State<PostVideoPage> {
   final PostVideoController postVideoController = Get.put(
     PostVideoController(),
   );
@@ -24,20 +30,46 @@ class PostVideoPage extends StatelessWidget {
                             .value!
                             .value
                             .isInitialized
-                    ? SizedBox(
-                      height: 300,
-                      width: 300,
-                      child: AspectRatio(
-                        aspectRatio:
-                            postVideoController
-                                .videoPlayerController
-                                .value!
-                                .value
-                                .aspectRatio,
-                        child: VideoPlayer(
-                          postVideoController.videoPlayerController.value!,
+                    ? Column(
+                      children: [
+                        AspectRatio(
+                          aspectRatio:
+                              postVideoController
+                                  .videoPlayerController
+                                  .value!
+                                  .value
+                                  .aspectRatio,
+                          child: VideoPlayer(
+                            postVideoController.videoPlayerController.value!,
+                          ),
                         ),
-                      ),
+                        VideoProgressIndicator(
+                          postVideoController.videoPlayerController.value!,
+                          allowScrubbing: true,
+                        ),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            IconButton(
+                              onPressed: postVideoController.seekBackward,
+                              icon: Icon(Icons.arrow_back),
+                            ),
+                            IconButton(
+                              onPressed: postVideoController.togglePlayPause,
+                              icon: Icon(
+                                postVideoController.isPlaying.value
+                                    ? Icons.play_arrow
+                                    : Icons.pause,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: postVideoController.seekForward,
+                              icon: Icon(Icons.arrow_forward),
+                            ),
+                          ],
+                        ),
+                      ],
                     )
                     : Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 60),
@@ -81,6 +113,26 @@ class PostVideoPage extends StatelessWidget {
               ],
             ),
           ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            final controller = postVideoController.videoPlayerController.value;
+
+            if (controller != null) {
+              if (controller.value.isPlaying) {
+                controller.pause();
+                postVideoController.isPlaying.value = true;
+              } else {
+                controller.play();
+                postVideoController.isPlaying.value = false;
+              }
+            }
+          });
+        },
+        child: Icon(
+          postVideoController.isPlaying.value ? Icons.play_arrow : Icons.pause,
         ),
       ),
     );

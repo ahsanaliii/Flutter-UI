@@ -9,6 +9,7 @@ class PostVideoController extends GetxController {
   final isLoading = false.obs;
   final uploadedUrl = "".obs;
   final videoPlayerController = Rx<VideoPlayerController?>(null);
+  final isPlaying = false.obs;
 
   Future<void> pickImage() async {
     final picker = ImagePicker();
@@ -17,16 +18,51 @@ class PostVideoController extends GetxController {
       final file = File(pickedVideo.path);
       videoFile.value = file;
       uploadedUrl.value = "";
+      await initializeVideo();
+    }
+  }
 
-      // initialize and play videoo
-
+  Future<void> initializeVideo() async {
+    final file = videoFile.value;
+    if (file != null) {
       final controller = VideoPlayerController.file(file);
       await controller.initialize();
-      controller.setLooping(true);
+      // controller.setLooping(true);
       controller.play();
-      VideoProgressIndicator(allowScrubbing: true, controller);
       videoPlayerController.value = controller;
+      // isPlaying.value = false;
       update();
+    }
+  }
+
+  void togglePlayPause() {
+    final controller = videoPlayerController.value;
+    if (controller != null) {
+      if (controller.value.isPlaying) {
+        controller.pause();
+        isPlaying.value = true;
+      } else {
+        controller.play();
+        isPlaying.value = false;
+      }
+    }
+  }
+
+  void seekForward() {
+    final controller = videoPlayerController.value;
+    if (controller != null && controller.value.isInitialized) {
+      final currentPosition = controller.value.position;
+      final target = currentPosition + Duration(seconds: 1);
+      controller.seekTo(target);
+    }
+  }
+
+  void seekBackward() {
+    final controller = videoPlayerController.value;
+    if (controller != null && controller.value.isInitialized) {
+      final currentPosition = controller.value.position;
+      final target = currentPosition - Duration(seconds: 1);
+      controller.seekTo(target > Duration.zero ? target : Duration.zero);
     }
   }
 
@@ -62,3 +98,6 @@ class PostVideoController extends GetxController {
     }
   }
 }
+
+                 
+      
